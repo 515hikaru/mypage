@@ -36,27 +36,52 @@ type alias Model =
 
 twitter : Model
 twitter =
-    { mediaName = "Twitter", userName = "515hikaru", idPrefix = "@", domain = "twitter.com", userPagePath = "/515hikaru" }
+    { mediaName = "Twitter"
+    , userName = "515hikaru"
+    , idPrefix = "@"
+    , domain = "twitter.com"
+    , userPagePath = "/515hikaru"
+    }
 
 
 gitHub : Model
 gitHub =
-    { mediaName = "GitHub", userName = "515hikaru", idPrefix = "@", domain = "github.com", userPagePath = "/515hikaru" }
+    { mediaName = "GitHub"
+    , userName = "515hikaru"
+    , idPrefix = "@"
+    , domain = "github.com"
+    , userPagePath = "/515hikaru"
+    }
 
 
 hatena : Model
 hatena =
-    { mediaName = "Hatena", userName = "hikaru515", idPrefix = "id:", domain = "blog.515hikaru.net", userPagePath = "/about" }
+    { mediaName = "Hatena"
+    , userName = "hikaru515"
+    , idPrefix = "id:"
+    , domain = "blog.515hikaru.net"
+    , userPagePath = "/about"
+    }
 
 
 qiita : Model
 qiita =
-    { mediaName = "Qiita", userName = "515hikaru", idPrefix = "@", domain = "qiita.com", userPagePath = "/515hikaru" }
+    { mediaName = "Qiita"
+    , userName = "515hikaru"
+    , idPrefix = "@"
+    , domain = "qiita.com"
+    , userPagePath = "/515hikaru"
+    }
 
 
 techBlog : Model
 techBlog =
-    { mediaName = "I Was Perfect", userName = "515hikaru", idPrefix = "", domain = "tech.515hikaru.net", userPagePath = "/about" }
+    { mediaName = "I Was Perfect"
+    , userName = "515hikaru"
+    , idPrefix = ""
+    , domain = "tech.515hikaru.net"
+    , userPagePath = "/about"
+    }
 
 
 init : Model
@@ -119,14 +144,18 @@ socialMediaInfo model =
 view : Model -> Html Msg
 view model =
     div [ class "social" ]
-        [ div [ class "social-buttons" ] <|
+        [ div
+            [ class "social-buttons" ]
+          <|
             List.map
                 (\x -> div [ class "social-button" ] [ x ])
-                [ button [ onClick Twitter ] [ text "Twitter" ]
-                , button [ onClick GitHub ] [ text "GitHub" ]
-                , button [ onClick Hatena ] [ text "Hatena" ]
-                , button [ onClick Qiita ] [ text "Qiita" ]
-                , button [ onClick TechBlog ] [ text "I Was Perfect" ]
+                [ div [ onClick Twitter ] [ text "Twitter" ]
+                , div [ onClick GitHub ] [ text "GitHub" ]
+                , div [ onClick Hatena ] [ text "Hatena" ]
+                , div [ onClick Qiita ] [ text "Qiita" ]
+                , div [ onClick TechBlog ] [ text "I Was Perfect" ]
                 ]
-        , div [ class "social-info" ] [ socialMediaInfo model ]
+        , div
+            [ class "social-info" ]
+            [ socialMediaInfo model ]
         ]
