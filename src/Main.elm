@@ -5,7 +5,7 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html, a, button, div, h1, text)
-import Html.Attributes exposing (href)
+import Html.Attributes exposing (class, href)
 import Html.Events exposing (onClick)
 
 
@@ -118,15 +118,15 @@ socialMediaInfo model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ div []
-            [ button [ onClick Twitter ] [ text "Twitter" ]
-            , button [ onClick GitHub ] [ text "GitHub" ]
-            , button [ onClick Hatena ] [ text "Hatena" ]
-            , button [ onClick Qiita ] [ text "Qiita" ]
-            , button [ onClick TechBlog ] [ text "I Was Perfect" ]
-            ]
-        , div
-            []
-            [ socialMediaInfo model ]
+    div [ class "social" ]
+        [ div [ class "social-buttons" ] <|
+            List.map
+                (\x -> div [ class "social-button" ] [ x ])
+                [ button [ onClick Twitter ] [ text "Twitter" ]
+                , button [ onClick GitHub ] [ text "GitHub" ]
+                , button [ onClick Hatena ] [ text "Hatena" ]
+                , button [ onClick Qiita ] [ text "Qiita" ]
+                , button [ onClick TechBlog ] [ text "I Was Perfect" ]
+                ]
+        , div [ class "social-info" ] [ socialMediaInfo model ]
         ]
