@@ -5,3 +5,5 @@ repl-temp-*
 .cache
 dist
 node_modules
+/public/*
+!/public/.gitkeep
