@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "dev-install": "npm install -D",
-    "start": "$(npm bin)/parcel index.html",
-    "build": "$(npm bin)/parcel build -d public index.html"
+    "dev-install": "yarn install -D",
+    "start": "$(yarn bin)/parcel index.html",
+    "build": "$(yarn bin)/parcel build -d public index.html"
   },
   "devDependencies": {
     "elm-hot": "^1.0.1",
