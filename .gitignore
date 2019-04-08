@@ -2,8 +2,17 @@
 elm-stuff
 # elm-repl generated files
 repl-temp-*
+
+# parcel create files
 .cache
 dist
+
+# dependences
 node_modules
+
+# deploy files
 /public/*
 !/public/.gitkeep
+
+# netlify state
+.netlify
