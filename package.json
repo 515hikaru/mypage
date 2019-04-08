@@ -2,10 +2,12 @@
   "scripts": {
     "dev-install": "yarn install -D",
     "start": "parcel index.html",
+    "check-format": "elm-format --validate src/*",
     "build": "parcel build -d public index.html",
     "deploy": "yarn run build && netlify deploy --prod"
   },
   "devDependencies": {
+    "elm-format": "^0.8.1",
     "elm-hot": "^1.0.1",
     "netlify-cli": "^2.10.0",
     "node-elm-compiler": "^5.0.3",
