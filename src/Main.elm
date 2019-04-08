@@ -26,7 +26,7 @@ type alias SocialMedia =
     , userName : String
     , idPrefix : String
     , domain : String
-    , userPagePath : String
+    ,  userPagePath : String
     }
 
 
