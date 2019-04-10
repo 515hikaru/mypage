@@ -156,8 +156,8 @@ addActiveFlg actModel deactModel =
         "inactive"
 
 
-convertClassName : String -> String
-convertClassName s =
+convertPropertyName : String -> String
+convertPropertyName s =
     String.toLower <| String.replace " " "-" s
 
 
