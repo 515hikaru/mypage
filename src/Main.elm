@@ -111,49 +111,17 @@ init =
 
 
 type Msg
-    = Twitter
-    | GitHub
-    | Hatena
-    | Qiita
-    | TechBlog
-    | NoteMu
+    = Activate Model
 
 
 update : Msg -> Model -> Model
 update msg model =
     case msg of
-        Twitter ->
-            twitter
-
-        GitHub ->
-            gitHub
-
-        Hatena ->
-            hatena
-
-        Qiita ->
-            qiita
-
-        TechBlog ->
-            techBlog
-
-        NoteMu ->
-            noteMu
-
-
-mediasList : List ( Msg, Model )
-mediasList =
-    [ ( Twitter, twitter )
-    , ( GitHub, gitHub )
-    , ( Hatena, hatena )
-    , ( Qiita, qiita )
-    , ( TechBlog, techBlog )
-    , ( NoteMu, noteMu )
-    ]
+        Activate newModel ->
+            newModel
 
 
 
--- List.zip [ Twitter, GitHub, Hatena, Qiita, TechBlog, NoteMu ] [ twitter, gitHub, hatena, qiita, techBlog, noteMu ]
 -- View
 
 
@@ -179,11 +147,6 @@ socialMediaInfo model =
         ]
 
 
-clickableDiv : Msg -> Model -> Html Msg
-clickableDiv msg model =
-    div [ onClick msg ] [ text model.mediaName ]
-
-
 view : Model -> Html Msg
 view model =
     div [ class "social" ]
@@ -191,8 +154,12 @@ view model =
             [ class "social-buttons" ]
           <|
             List.map
-                (\( x, y ) -> div [ class "social-button" ] [ clickableDiv x y ])
-                mediasList
+                (\x ->
+                    div
+                        [ class "social-button" ]
+                        [ div [ onClick <| Activate x ] [ text x.mediaName ] ]
+                )
+                [ twitter, gitHub, hatena, qiita, noteMu ]
         , div
             [ class "social-info" ]
             [ socialMediaInfo model ]
