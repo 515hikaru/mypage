@@ -9,7 +9,6 @@ body > div, h1 {
 
 .social-button {
     width: 240px;
-    border: 1px solid;
     margin: 30px 15px;
     text-align: center;
 }
@@ -17,6 +16,45 @@ body > div, h1 {
 .social-button > div {
     padding: 20px 0;
 }
+
+.inactive {
+    opacity: 0.7;
+}
+/* SNS button color */
+#twitter {
+    border-color: #22A1F2;
+    background-color: #22A1F2;
+    color: #FFF;
+}
+
+#github {
+    background-color: #171414;
+    color: #FFF;
+}
+
+#hatena {
+    border: 1px solid #333;
+    background-color: #FFF;
+    color: #333;
+}
+
+#i-was-perfect {
+    border: 1px solid #202429;
+    background-color: #FFF;
+    color: #202429;
+}
+
+#qiita {
+    background-color: #55C500;
+    color: #FFF;
+}
+
+#note {
+    border: 1px solid #41C8B4;
+    background-color: #FFF;
+    color: #000;
+}
+
 .social-info {
     width: 100%;
     margin: 0 auto;
