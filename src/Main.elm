@@ -147,6 +147,15 @@ socialMediaInfo model =
         ]
 
 
+addActiveFlg : Model -> Model -> String
+addActiveFlg actModel deactModel =
+    if actModel.mediaName == deactModel.mediaName then
+        "active"
+
+    else
+        "inactive"
+
+
 view : Model -> Html Msg
 view model =
     div [ class "social" ]
@@ -156,10 +165,10 @@ view model =
             List.map
                 (\x ->
                     div
-                        [ class "social-button" ]
+                        [ class "social-button", class <| addActiveFlg model x ]
                         [ div [ onClick <| Activate x ] [ text x.mediaName ] ]
                 )
-                [ twitter, gitHub, hatena, qiita, noteMu ]
+                [ twitter, gitHub, hatena, techBlog, qiita, noteMu ]
         , div
             [ class "social-info" ]
             [ socialMediaInfo model ]
