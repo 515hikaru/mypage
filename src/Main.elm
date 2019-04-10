@@ -5,7 +5,7 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html, a, button, div, h2, p, text)
-import Html.Attributes exposing (class, href)
+import Html.Attributes exposing (class, href, id)
 import Html.Events exposing (onClick)
 
 
@@ -156,6 +156,11 @@ addActiveFlg actModel deactModel =
         "inactive"
 
 
+convertClassName : String -> String
+convertClassName s =
+    String.toLower <| String.replace " " "-" s
+
+
 view : Model -> Html Msg
 view model =
     div [ class "social" ]
@@ -165,8 +170,15 @@ view model =
             List.map
                 (\x ->
                     div
-                        [ class "social-button", class <| addActiveFlg model x ]
-                        [ div [ onClick <| Activate x ] [ text x.mediaName ] ]
+                        [ class "social-button"
+                        , class <| addActiveFlg model x
+                        ]
+                        [ div
+                            [ onClick <| Activate x
+                            , id <| convertClassName x.mediaName
+                            ]
+                            [ text x.mediaName ]
+                        ]
                 )
                 [ twitter, gitHub, hatena, techBlog, qiita, noteMu ]
         , div
