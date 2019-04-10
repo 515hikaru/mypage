@@ -75,7 +75,7 @@ qiita =
     , idPrefix = "@"
     , domain = "qiita.com"
     , userPagePath = "/515hikaru"
-    , description = "あんまり使っていないが一応。需要あるかもな、と思ったらたまに書く。"
+    , description = "あんまり使っていないがいくつか記事がある。需要あるかもな、と思ったらたまに書く。"
     }
 
 
