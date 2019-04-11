@@ -1,7 +1,7 @@
 -- Main.elm
 
 
-module Main exposing (main)
+module Main exposing (Model, Msg(..), SocialMedia, addActiveFlg, convertPropertyName, gitHub, hatena, init, main, makeAboutPageUrl, noteMu, qiita, socialMediaInfo, techBlog, twitter, update, userIdShow, view)
 
 import Browser
 import Html exposing (Html, a, button, div, h2, p, text)
@@ -175,7 +175,7 @@ view model =
                         ]
                         [ div
                             [ onClick <| Activate x
-                            , id <| convertClassName x.mediaName
+                            , id <| convertPropertyName x.mediaName
                             ]
                             [ text x.mediaName ]
                         ]
