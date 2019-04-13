@@ -6,16 +6,6 @@ import Main exposing (..)
 import Test exposing (..)
 
 
-suite : Test
-suite =
-    describe "foo"
-        [ test "bar" <|
-            \_ ->
-                twitter.mediaName
-                    |> Expect.equal "Twitter"
-        ]
-
-
 suiteConvertPropertyName : Test
 suiteConvertPropertyName =
     describe "toLower and remove splited whitespace"
