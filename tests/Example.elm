@@ -1,4 +1,4 @@
-module Example exposing (suite, suiteConvertPropertyName)
+module Example exposing (suiteConvertPropertyName)
 
 import Expect exposing (Expectation)
 import Fuzz exposing (Fuzzer, int, list, string)
