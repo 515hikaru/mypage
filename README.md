@@ -2,4 +2,5 @@
 [![Build Status](https://travis-ci.org/515hikaru/mypage.svg?branch=master)](https://travis-ci.org/515hikaru/mypage)
 
 # mypage
-My profile page
+
+My profile page.
